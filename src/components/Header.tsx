@@ -15,7 +15,7 @@ export default function Header() {
               <img src="./images/bell.png" width={24} alt="" />
             </button>
             <div className={styles.headerUser}>
-              <img src="images/cat.jpg" width={40} alt="" />
+              <img src="./images/cat.jpg" width={40} alt="" />
               <span>Ivan123</span>
             </div>
           </div>

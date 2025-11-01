@@ -30,7 +30,7 @@ export default function UserCard() {
       <div className={styles.cardInfo}>
         {users.map((user) => (
           <div key={user.id} className={styles.cardItem}>
-            <img src={"/images/cat.jpg"} alt={user.name} width={120} />
+            <img src={"./images/cat.jpg"} alt={user.name} width={120} />
             <div className={styles.cardText}>
               <h5 className={styles.cardUserName}>{user.name}</h5>
               <p>{user.company.name}</p>
