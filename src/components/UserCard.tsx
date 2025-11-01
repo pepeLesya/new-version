@@ -3,7 +3,17 @@ import { fetchUsers } from "../api/usersApi";
 import styles from "../ui/UserCard.module.scss";
 
 export default function UserCard() {
-  const [users, setUsers] = useState([]);
+  interface User {
+    id: number;
+    name: string;
+    company: {
+      name: string;
+    };
+    address: {
+      city: string;
+    };
+  }
+  const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,7 +27,6 @@ export default function UserCard() {
 
   return (
     <div className={styles.cardBlock}>
-
       <div className={styles.cardInfo}>
         {users.map((user) => (
           <div key={user.id} className={styles.cardItem}>
@@ -25,21 +34,19 @@ export default function UserCard() {
             <div className={styles.cardText}>
               <h5 className={styles.cardUserName}>{user.name}</h5>
               <p>{user.company.name}</p>
-              
+
               <p>{user.address.city}</p>
             </div>
-            <div  className={styles.buttonChoice}>
-                <button
-              aria-label="Открыть меню"
-              className={styles.menuButton}
-              type="button"
-            >
-              ⋮
-            </button>
+            <div className={styles.buttonChoice}>
+              <button
+                aria-label="Открыть меню"
+                className={styles.menuButton}
+                type="button"
+              >
+                ⋮
+              </button>
             </div>
-            
           </div>
-          
         ))}
       </div>
     </div>
