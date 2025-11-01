@@ -1,0 +1,63 @@
+@mixin fluid-text($max: 48, $min: 16) {
+  font-size: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
+}
+
+@mixin reset-link {
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+@mixin reset-button {
+  padding: 0;
+  border-color: transparent;
+  border: none;
+  background: transparent;
+}
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+  justify-content: center;
+  align-items: center;
+}
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin grid-centreCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  justify-content: center;
+  gap: 16px 15px;
+  padding: 16px;
+}
+@mixin grid-tablet {
+  gap: 20px 15px;
+  padding: 8px;
+  grid-template-columns: repeat(2, 210px);
+}
+
+@mixin grid-mobile {
+  gap: 15px 12px;
+  padding: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
+@mixin center-img {
+  border-radius: 30px;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+@mixin square($size) {
+  width: $size;
+  aspect-ratio: 1;
+}

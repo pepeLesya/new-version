@@ -1,0 +1,26 @@
+:root{
+    --color-01:#161616;
+    --color-02: #595959;
+    --color-03: #9c9c9c;
+    --color-04: #dadada;
+    --color-05: #f4f4f4;
+    --color-06: #fdfdfd;
+   --color-accent:#22A0BC;
+    --border:1px solid var(--color-01) ;
+    --border-radius:50px;
+    --border-radius-small:8px;
+    --border-radius-large:45px;
+
+
+    --font-family-base: "Semibold", sans-serif;
+
+    --container-width:1160px;
+    --container-padding-x:10px;
+    --container-padding-y:20px;
+
+     --input-height:42px;
+     --button-height:46px;
+
+     --transition-duration:0.2s ;
+
+}

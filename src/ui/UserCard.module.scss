@@ -1,0 +1,125 @@
+@use "../styles/mixins" as *;
+@use "../styles/utils" as *;
+
+.cardBlock {
+  margin-top: 30px;
+  width: 100%;
+}
+.cardInfo {
+  @include grid-centreCard;
+  padding: 20px;
+
+  @media (max-width: 1056px) {
+    @include grid-tablet;
+  }
+
+  @media (max-width: 912px) {
+    @include grid-tablet;
+  }
+
+  @media (max-width: 618px) {
+    margin: auto;
+    max-width: 330px;
+    padding: 20px;
+  }
+}
+
+.cardItem {
+  display: flex;
+  position: relative;
+  align-items: center;
+  max-width: 100%;
+  padding: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.37);
+  border-radius: 15px;
+  gap: 10px;
+  @media (max-width: 1056px) {
+    height: 250px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  img {
+    @include center-img;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.184);
+
+    @media (max-width: 1056px) {
+      @include square(120px);
+      align-self: center;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 912px) {
+      align-self: center;
+      margin-bottom: 10px;
+    }
+  }
+}
+.cardText {
+  @include fluid-text(16, 13);
+
+  height: 117px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  overflow: hidden;
+  font-size: 20px;
+  max-width: 155px;
+  min-width: 0;
+  gap: 2px;
+
+  @media (max-width: 1056px) {
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 18px;
+  }
+  p {
+    overflow: hidden;
+    @include fluid-text(15, 13);
+    font-weight: 400;
+    color: var(--color-03);
+    @media (max-width: 1056px) {
+    }
+  }
+}
+
+.cardUserName {
+  @include fluid-text(20, 15);
+  color: var(--color-accent);
+  max-width: 100%;
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menuButton {
+  @include reset-button;
+  position: absolute;
+  height: 24;
+  right: 17px;
+  z-index: 10;
+  top: 22px;
+  margin-left: 5px;
+  color: #282525;
+  font-size: 20px;
+  line-height: 1;
+  padding: 4px;
+  cursor: pointer;
+  align-items: center;
+  @media (max-width: 1056px) {
+    top: 150px;
+    right: 20px;
+  }
+  @media (max-width: 912px) {
+    top: 150px;
+    right: 20px;
+  }
+}

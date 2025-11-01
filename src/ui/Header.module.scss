@@ -1,0 +1,35 @@
+@use '../styles/mixins' as *;
+@use '../styles/utils' as *;
+
+
+.header {
+  padding-top: 20px;
+  width: 100%;
+}
+.headerInner {
+  @include flex-center;
+  min-height: 64px;
+  @include reset-link;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerNote {
+  @include flex-center;
+  gap: 10px;
+}
+.headerNote  {
+  button{
+  @include reset-button;
+  color: black;
+  }
+}
+.headerUser {
+  @include flex-center;
+  gap: 5px;
+}
+.headerUser img {
+  @include center-img;
+  @include square(20);
+}
