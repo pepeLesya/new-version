@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchUsers } from "../api/usersApi";
 import styles from "../ui/UserCard.module.scss";
+import avatar from '../../images/cat.jpg'
 
 export default function UserCard() {
   interface User {
@@ -30,7 +31,7 @@ export default function UserCard() {
       <div className={styles.cardInfo}>
         {users.map((user) => (
           <div key={user.id} className={styles.cardItem}>
-            <img src={"./images/cat.jpg"} alt={user.name} width={120} />
+            <img src={avatar} alt={user.name} width={120} />
             <div className={styles.cardText}>
               <h5 className={styles.cardUserName}>{user.name}</h5>
               <p>{user.company.name}</p>
