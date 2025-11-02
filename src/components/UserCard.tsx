@@ -34,6 +34,13 @@ export default function UserCard() {
             <img src={avatar} alt={user.name} width={120} />
             <div className={styles.cardText}>
               <h5 className={styles.cardUserName}>{user.name}</h5>
+              <button
+                aria-label="Открыть меню"
+                className={styles.menuButton}
+                type="button"
+              >
+                ⋮
+              </button>
               <p>{user.company.name}</p>
 
               <p>{user.address.city}</p>

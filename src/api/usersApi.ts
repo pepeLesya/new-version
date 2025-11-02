@@ -6,6 +6,9 @@ export const fetchUsers= ()=>{
       }
     return response.json()
     })
+    .then((data) => {
+          return data.slice(0, 6); 
+        });
     
 }
 const users = await fetchUsers()

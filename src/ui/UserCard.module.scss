@@ -9,6 +9,9 @@
   @include grid-centreCard;
   padding: 20px;
 
+
+
+
   @media (max-width: 1056px) {
     @include grid-tablet;
   }
@@ -17,11 +20,20 @@
     @include grid-tablet;
   }
 
+
   @media (max-width: 618px) {
-    margin: auto;
-    max-width: 330px;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 180px));
   }
+  @media (max-width: 391px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 180px));
+    gap: 12px;
+    padding: 12px;
+  }
+
+
+
 }
 
 .cardItem {
@@ -29,21 +41,21 @@
   position: relative;
   align-items: center;
   max-width: 100%;
-  padding: 10px;
+  padding: 12px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.37);
   border-radius: 15px;
-  gap: 10px;
+  gap: 12px;
   @media (max-width: 1056px) {
-    height: 250px;
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
     gap: 8px;
+    padding: 14px;
   }
 
   img {
     @include center-img;
-    object-fit: cover;
-    border-radius: 8px;
+    @include square(88px);
+
     flex-shrink: 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.184);
 
@@ -63,23 +75,32 @@
 .cardText {
   @include fluid-text(16, 13);
 
-  height: 117px;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center; 
   align-items: flex-start;
-  text-align: center;
+ // text-align: center;
   overflow: hidden;
   font-size: 20px;
-  max-width: 155px;
+  max-width: 100%;
   min-width: 0;
+  flex: 1 1 auto;
+  padding-right: 15px;
+
   gap: 2px;
 
-  @media (max-width: 1056px) {
+    @media (max-width: 1056px) {
     align-items: flex-start;
     justify-content: center;
-    padding-left: 18px;
+    
   }
+/*
+  @media (max-width: 519px) {
+    flex: 1;
+    min-width: 0;
+  }
+*/
   p {
     overflow: hidden;
     @include fluid-text(15, 13);
@@ -93,11 +114,19 @@
 .cardUserName {
   @include fluid-text(20, 15);
   color: var(--color-accent);
-  max-width: 100%;
   overflow: hidden;
+  min-width: 0;
   font-weight: 600;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: wrap;
+
+//word-break: break-all;
+  @media (max-width: 420px) {
+  }
+
+  @media (max-width: 545px) {
+    font-size: 15px;
+  }
 }
 
 .menuButton {

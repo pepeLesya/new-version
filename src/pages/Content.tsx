@@ -9,9 +9,7 @@ export default function Content() {
 
     <div className="container">
     <Header/>
-    <div className={styles.cards}>
-        <UserCard/>
-    </div>
+    <UserCard/>
     </div>
   )
 }

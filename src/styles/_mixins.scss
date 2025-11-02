@@ -42,19 +42,22 @@
 @mixin grid-tablet {
   gap: 20px 15px;
   padding: 8px;
-  grid-template-columns: repeat(2, 210px);
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+
 }
 
 @mixin grid-mobile {
-  gap: 15px 12px;
+ gap: 15px 12px;
   padding: 8px;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
 @mixin center-img {
-  border-radius: 30px;
+   border-radius: 8px;
   object-fit: cover;
   aspect-ratio: 1;
+  display: block;
+
 }
 
 @mixin square($size) {
