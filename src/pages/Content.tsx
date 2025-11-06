@@ -9,7 +9,10 @@ export default function Content() {
 
     <div className="container">
     <Header/>
+    <h2 className={styles.sectionTitle}>Активные</h2>
     <UserCard/>
+    <h2 className={styles.sectionTitle}>Архив</h2>
+    
     </div>
   )
 }

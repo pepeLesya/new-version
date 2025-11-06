@@ -9,31 +9,18 @@
   @include grid-centreCard;
   padding: 20px;
 
-
-
-
   @media (max-width: 1056px) {
     @include grid-tablet;
   }
 
-  @media (max-width: 912px) {
-    @include grid-tablet;
+ 
+
+  @media (max-width: 611px) {
+    @include grid-mobile;
+    padding:2px;
+
   }
-
-
-  @media (max-width: 618px) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 180px));
-  }
-  @media (max-width: 391px) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 180px));
-    gap: 12px;
-    padding: 12px;
-  }
-
-
-
+ 
 }
 
 .cardItem {
@@ -41,101 +28,115 @@
   position: relative;
   align-items: center;
   max-width: 100%;
-  padding: 12px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.37);
+  height: 168px;
+  padding: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.188);
   border-radius: 15px;
   gap: 12px;
   @media (max-width: 1056px) {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 8px;
+    height: 150px;
     padding: 14px;
+  }
+  @media (max-width:611px) {
+    @include grid-mobile;
+     flex-direction: column;
+
+     height: 258px;
   }
 
   img {
     @include center-img;
-    @include square(88px);
-
+    width: 112px;
+    height: 79%;
     flex-shrink: 0;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.184);
 
     @media (max-width: 1056px) {
-      @include square(120px);
       align-self: center;
       object-fit: cover;
-      margin-bottom: 10px;
+      width: 90px;
+      height: 79%;
     }
 
-    @media (max-width: 912px) {
-      align-self: center;
-      margin-bottom: 10px;
-    }
+   @media (max-width:611px) {
+     width: 130px;
+     height: 51%;
+
+  }
   }
 }
 .cardText {
-  @include fluid-text(16, 13);
-
-  height: auto;
+  @include fluid-text(17, 15);
+  height: 100%;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
-  justify-content: center; 
-  align-items: flex-start;
- // text-align: center;
+
+  flex-wrap: wrap;
   overflow: hidden;
-  font-size: 20px;
+  font-size: 18px;
   max-width: 100%;
   min-width: 0;
-  flex: 1 1 auto;
-  padding-right: 15px;
-
+  padding: 15px 0;
   gap: 2px;
 
-    @media (max-width: 1056px) {
-    align-items: flex-start;
-    justify-content: center;
-    
+  @media (max-width: 1056px) {
+    padding: 5px;
   }
-/*
-  @media (max-width: 519px) {
-    flex: 1;
-    min-width: 0;
+  
+  @media (max-width: 610px) {
+  max-width: 95%;
+    flex-wrap: nowrap;
   }
-*/
+
+  h5 {
+     @media (max-width: 610px) {
+  max-width: 95%;
+  overflow: hidden;
+text-overflow: ellipsis;
+    white-space: wrap;
+  }
+  }
   p {
+    @include fluid-text(15, 14);
     overflow: hidden;
-    @include fluid-text(15, 13);
     font-weight: 400;
     color: var(--color-03);
-    @media (max-width: 1056px) {
-    }
+  }
+}
+.cardCompany {
+  @media (max-width: 1056px) {
+  }
+}
+.cardAdress {
+  margin-top: auto;
+}
+
+.cardName {
+  display: flex;
+  button {
+    position: absolute;
   }
 }
 
 .cardUserName {
-  @include fluid-text(20, 15);
+  @include fluid-text(18, 17);
   color: var(--color-accent);
   overflow: hidden;
-  min-width: 0;
-  font-weight: 600;
   text-overflow: ellipsis;
-  white-space: wrap;
 
-//word-break: break-all;
-  @media (max-width: 420px) {
-  }
-
-  @media (max-width: 545px) {
-    font-size: 15px;
-  }
+ 
 }
 
 .menuButton {
   @include reset-button;
-  position: absolute;
+  // position: absolute;
   height: 24;
-  right: 17px;
+  right: 20px;
   z-index: 10;
-  top: 22px;
+  top: 19px;
   margin-left: 5px;
   color: #282525;
   font-size: 20px;
@@ -144,11 +145,11 @@
   cursor: pointer;
   align-items: center;
   @media (max-width: 1056px) {
-    top: 150px;
-    right: 20px;
+    top: 15px;
+    right: 10px;
   }
-  @media (max-width: 912px) {
-    top: 150px;
-    right: 20px;
+  @media (max-width: 611px) {
+    top: 148px;
+    right: 5px;
   }
 }
